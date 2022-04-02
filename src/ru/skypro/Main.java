@@ -47,15 +47,18 @@ public class Main {
         strSet.addAll(str);
         List<String> strListUnique = new ArrayList<>();
         strListUnique.addAll(strSet);
+        Map <String, Integer> strMap = new HashMap<>();
         int countDouble = 0;
         int countRepeatingElements = 0;
         for (String s : strListUnique) {
             if (Collections.frequency(str, s) > 1) {
                 countRepeatingElements = countRepeatingElements + Collections.frequency(str, s);
                 countDouble++;
+                strMap.put(s, Collections.frequency(str, s));
             }
         }
-        System.out.println("Количество повторяющихся элементов -- " + countRepeatingElements);
+        System.out.println("Количество повторений элементов -- " + countRepeatingElements);
         System.out.println("Количество дублей -- " + countDouble);
+        System.out.println(strMap);
     }
 }
